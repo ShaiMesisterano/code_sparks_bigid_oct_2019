@@ -1,12 +1,23 @@
 const fs = require('fs');
 
-function readFile(filename) {
+function readFile(filename, cb) {
     fs.readFile(filename, 'utf-8', function (error, content) {
         if (error) console.error(error);
 
         console.log("File content", content);
+        cb();
     });
-    console.log("end");
+    // const content = fs.readFileSync(filename, 'utf-8');
+    // console.log("File Content", content);
+    // console.log("end");
 }
 
-readFile('output.txt');
+function writeFile(filename, content, cb) {
+    fs.writeFile(filename, content, function () {
+        cb();
+    });
+}
+
+module.exports = {
+    readFile
+};
