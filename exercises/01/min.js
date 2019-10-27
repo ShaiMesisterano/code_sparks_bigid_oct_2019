@@ -6,5 +6,7 @@ Array.prototype.min =  function (){
          }
          return min;
     };
-    
 
+
+var arr = [1, 22, 50, 7];
+var minimum = arr.min();

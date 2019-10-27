@@ -6,5 +6,7 @@ Array.prototype.max =  function (){
          }
          return max;
     };
-    
 
+
+var arr = [1, 22, 50, 7];
+var maximum = arr.max();
